@@ -33,9 +33,10 @@ from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 from matplotlib.colors import LightSource
 from tqdm import tqdm
+import sys
 
 DATA_DIR = "data/" # Directorio para leer y guardar informacion
-DATA_FILE = "S32W070.hgt" # Archivo .hgt que contiene DEM
+# DATA_FILE = "S32W070.hgt" # Archivo .hgt que contiene DEM
 LT_INIT = -32 # Latitud inicial del archivo .hgt
 LON_INIT = -70 # Longitud inicial del archivo .hgt
 
@@ -44,7 +45,16 @@ SECOND = 1/SAMPLES # Tamaño de paso entre una coordenada y otra
 LGT_AZIMUT= 100 # Angulo azimut del sol
 LGT_ELEVATION = 45 # Angulo de elevacion del sol
 VER_EXAGERATION = 1 # Exageracion vertical para marcar sombras
-FILE = os.path.join(DATA_DIR,DATA_FILE)
+
+# FILE = os.path.join(DATA_DIR,DATA_FILE)
+if len(sys.argv) > 1:
+    if(sys.argv[1].split('.')[1] == 'hgt'):
+        FILE = sys.argv[1]
+    else:
+        print("Extension del archivo incorrecta, solo se permite .hgt")
+        sys.exit()
+else:
+    FILE = 'data/S33W070.hgt'
 
 # Funcion que lee el archivo .hgt pasando los bytes de 16 bit en formato
 # big-endesian retornando un array numpy
@@ -102,6 +112,12 @@ def plot_perfiles(data, invertir= False):
 
     plt.show()
 
+# Funcion que guarda el ploteo en un archivo
+def save_name_file(data_dir, file_dir):
+    a = file_dir.split('/')
+    a = a[1].split('.')
+    return os.path.join(data_dir,"result-{}".format(a[0]))
+
 # Funcion que permite vizualizar el DEM en 2D y 3D
 def plot_strm(x,y,e):
     # Se declara el tamaño de la ventana
@@ -119,18 +135,19 @@ def plot_strm(x,y,e):
     ax1.set_zlim(0,np.amax(e))
     x, y = np.meshgrid(x, y)
     rgb = ls.shade(e,cmap=cm.gray, vert_exag=VER_EXAGERATION, blend_mode='soft')
+
     sup = ax1.plot_surface(x,y,e, facecolors=rgb, linewidth=0, antialiased = False, shade=False)
 
     #Se crea 2do subplot para graficar DEM en 2D
     ax2 = fig.add_subplot(1,2,2)
-    ax2.set_title("Vista 2D", y=1.08)
+    ax2.set_title("Vista 2D", y=1)
 
     # Se transforma el DEM a hillshade utilizando el LighSource
     # vert_exag es la exageracion vertical
     l = ls.hillshade(e, vert_exag=10)
 
     # Permite vizualizar el DEM con sombras aplicadas, ademas de su ejes de latitud y longitud
-    sup = ax2.imshow(l, cmap='gray', extent=[xmin, xmax, ymin, ymax])
+    ax2.imshow(l, cmap='gray', extent=[xmin, xmax, ymin, ymax])
 
     # Funcion que permite ver el DEM sin hillshade
     # ax2.matshow(e, interpolation="bilinear", origin="lower",cmap=cm.cividis, extent=[xmin, xmax, ymin, ymax])
@@ -144,9 +161,8 @@ def plot_strm(x,y,e):
     #     plt.draw()
     #     plt.pause(.01)
 
-    fig.colorbar(sup, shrink=0.5, aspect=5)
     plt.show()
-    fig.savefig("{}/results.png".format(DATA_DIR), bbox_inches='tight')
+    fig.savefig(save_name_file(DATA_DIR,FILE), bbox_inches='tight')
 
 # Funcion que permite calcular las pendientes
 # La idea era calcularlas para poder calcular sombras, pero no sirvio la idea xd
