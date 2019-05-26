@@ -53,7 +53,7 @@ python app.py data/S05W070.hgt
 
 ## Resultados
 
-![Resultado] (https://user-images.githubusercontent.com/28570853/58378248-03918580-7f5f-11e9-86cc-34668c04db88.png)
+![Resultado](https://user-images.githubusercontent.com/28570853/58378248-03918580-7f5f-11e9-86cc-34668c04db88.png)
 
 ### Fuentes e informacion de utilidad
 
