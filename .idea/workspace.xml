@@ -14,8 +14,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="884">
-                <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
+              <first_editor relative-caret-position="51">
+                <caret line="15" selection-start-line="15" selection-end-line="15" />
               </first_editor>
               <second_editor />
             </state>
@@ -42,7 +42,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="426" />
     <option name="y" value="-779" />
     <option name="width" value="928" />
@@ -104,16 +104,15 @@
       <workItem from="1558756690265" duration="30948000" />
       <workItem from="1558846445032" duration="300000" />
       <workItem from="1558849710431" duration="1957000" />
-      <workItem from="1558851807878" duration="39000" />
+      <workItem from="1558851807878" duration="121000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33244000" />
+    <option name="totallyTimeSpent" value="33326000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-776" width="1376" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26215807" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -160,8 +159,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="884">
-            <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
+          <first_editor relative-caret-position="51">
+            <caret line="15" selection-start-line="15" selection-end-line="15" />
           </first_editor>
           <second_editor />
         </state>
