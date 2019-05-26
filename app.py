@@ -1,6 +1,6 @@
 """
 Titulo: Lectura, procesamiento y dibujo de un archivo DEM
-Autor: Felipe Godoy Cerca
+Autor: Felipe Godoy Cerda
 Fecha: 26-05-2019
 
 Descripcion:
@@ -71,7 +71,13 @@ def read_elevation_from_file(hgt_file):
 def clean_data(e):
     print("Limpiando datos incorrectos...")
     prev = np.ptp(e)
-    mean = np.mean(e) #Se obtiene promedio de medidas
+    n = []
+    print("Calculando promedio ignorando valores vacios")
+    for item in np.nditer(e):
+        if item > 0:
+            n.append(item)
+    mean = np.mean(np.array(n)) #Se obtiene promedio de medidas
+    print("Corrigiendo valores vacios por valor promedio")
     for item in np.nditer(e, op_flags=['readwrite']):
         if item < 0:
             item[...] = mean
