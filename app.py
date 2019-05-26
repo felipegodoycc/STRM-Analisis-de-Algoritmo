@@ -10,6 +10,19 @@ en implementar la lectura y dibujo de un archivo DEM ( Digital
 Elevation Model) obtenido desde el proyecto STRM (Shuttle Radar Topography
 Mision), ademas, realizando el procesamiento para el dibujo de sombras.
 
+Obtener dataset:
+https://www2.jpl.nasa.gov/srtm/
+https://dds.cr.usgs.gov/srtm/version2_1/SRTM3/
+
+Fuentes e informacion util:
+https://matplotlib.org/mpl_toolkits/mplot3d/tutorial.html
+https://librenepal.com/article/reading-srtm-data-with-python/
+http://desktop.arcgis.com/es/arcmap/10.3/tools/spatial-analyst-toolbox/how-hillshade-works.htm
+https://www.neonscience.org/create-hillshade-py
+https://matplotlib.org/examples/specialty_plots/topographic_hillshading.html
+https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.griddata.html
+
+
 """
 
 
