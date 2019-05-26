@@ -51,6 +51,10 @@ python app.py
 python app.py data/S05W070.hgt
 ```
 
+## Resultados
+
+![Resultado] (https://github.com/felipegodoycc/STRM-Analisis-de-Algoritmo/blob/master/data/result-S33W070.png)
+
 ### Fuentes e informacion de utilidad
 
 https://matplotlib.org/mpl_toolkits/mplot3d/tutorial.html
