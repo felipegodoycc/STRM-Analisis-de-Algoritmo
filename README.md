@@ -1,6 +1,6 @@
-STRM- Analisis-de-Algoritmos
+# STRM- Analisis-de-Algoritmos
 
-##Descripcion
+## Descripcion
 Codigo realizado para la asignatura Analisis de Algoritmos, el cual consiste
 en implementar la lectura y dibujo de un archivo DEM ( Digital
 Elevation Model) obtenido desde el proyecto STRM (Shuttle Radar Topography
@@ -36,7 +36,7 @@ or
 conda install numpy matplotlib tqdm
 ```
 
-##Ejecucion
+## Ejecucion
 
 Una vez instalados los paquetes necesarios ejecuta el siguiente comando:
 ```
@@ -44,13 +44,13 @@ Una vez instalados los paquetes necesarios ejecuta el siguiente comando:
 python app.py
 ```
 
-####Opcional:
+#### Opcional:
 ```
 # Puedes indicar la ruta del archivo que tu desees
 python app.py data/S05W070.hgt
 ```
 
-###Fuentes e informacion de utilidad
+### Fuentes e informacion de utilidad
 
 https://matplotlib.org/mpl_toolkits/mplot3d/tutorial.html
 https://librenepal.com/article/reading-srtm-data-with-python/
